@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<style type="text/css">
+<!--
+/*styling for webpage*/
+body {
+    color:#000000;
+    background-color:#4a646c;
+    margin:20;
+}
+#container {
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+
+a img {
+    border:none;
+}
+
+/*styling for navbar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #4a646c;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #333;
+}
+
+-->
+</style>
+  
+<head>
+    <title>{% block title %}{% endblock %}</title
+    </head>
+    <body>
+      
+    <div class="nav_bar">
+      <ul>
+        <li><a class="{% if active_page == 'home' %}active{% endif %}" href="home">Home</a></li>
+        <li><a class="{% if active_page == 'rosaries' %}active{% endif %}" href="rosaries">Rosaries</a></li>
+        <li><a class="{% if active_page == 'baby_pins' %}active{% endif %}" href="baby_pins">Baby Pins</a></li>
+        <li><a class="{% if active_page == 'contact' %}active{% endif %}" href="contact">Contact</a></li>
+      </ul>
+    </div>
+
+
+        <h1 style="background-color:Black; color:#4a646c;"> <br> &nbsp &nbsp DreamyRosary</h1>
+        {% block content %}
+        {% endblock %}
+</body>
+</html>
